@@ -7,18 +7,19 @@ WelcomeComponent = React.createClass({
   }
 });
 
-FlowRouter.route("/", {
+FlowRouter.route("/post", {
   action: function() {
+    posts = [{title:'hello'},{title:'hello2'}]
     ReactLayout.render(MainLayout, {
-      content: <WelcomeComponent name={'takashi'} />
+      content: <PostList posts={posts} />
     });
   }
 });
 
-FlowRouter.route("/my/name/is/:name", {
-  action: function(params) {
-    ReactLayout.render(MainLayout, {
-      content: <WelcomeComponent name={params.name} />
-    });
-  }
-});
+// FlowRouter.route("/my/name/is/:name", {
+//   action: function(params) {
+//     ReactLayout.render(MainLayout, {
+//       content: <WelcomeComponent name={params.name} />
+//     });
+//   }
+// });
