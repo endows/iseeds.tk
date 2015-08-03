@@ -1,14 +1,4 @@
-let _posts = [
-  {
-    _id:0,
-    title: 'hello',
-    body:"あのー"
-  }, {
-    _id:1,
-    title: 'hello2',
-    body:"あのー２"
-  }
-]
+
 
 FlowRouter.route("/post", {
   subscriptions: function() {
@@ -26,10 +16,16 @@ FlowRouter.route("/post", {
 });
 
 FlowRouter.route("/post/:_id", {
+  subscriptions: function() {
+    this.register('posts', Meteor.subscribe('posts'));
+  },
   action: function (params) {
-    ReactLayout.render(MainLayout, {
-      content:
-      <PostList posts={[_posts[params._id]]}/>
+    FlowRouter.subsReady("posts", function() {
+      let _posts = PostCollection.find({_id:params._id}).fetch()
+      ReactLayout.render(MainLayout, {
+        content:
+        <PostList posts={_posts}/>
+      });
     });
   }
 });
