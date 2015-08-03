@@ -21,10 +21,10 @@ FlowRouter.route("/post/:_id", {
   },
   action: function (params) {
     FlowRouter.subsReady("posts", function() {
-      let _posts = PostCollection.find({_id:params._id}).fetch()
+      let _posts = PostCollection.findOne({_id:params._id})
       ReactLayout.render(MainLayout, {
         content:
-        <PostList posts={_posts}/>
+        <Post post={_posts}/>
       });
     });
   }
