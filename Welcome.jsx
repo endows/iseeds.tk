@@ -9,11 +9,18 @@ let _posts = [
     body:"あのー２"
   }
 ]
+
 FlowRouter.route("/post", {
+  subscriptions: function() {
+    this.register('posts', Meteor.subscribe('posts'));
+  },
   action: function () {
-    ReactLayout.render(MainLayout, {
-      content:
-      <PostList posts={_posts}/>
+    FlowRouter.subsReady("posts", function() {
+      let _posts = PostCollection.find().fetch()
+      ReactLayout.render(MainLayout, {
+        content:
+        <PostList posts={_posts}/>
+      });
     });
   }
 });
