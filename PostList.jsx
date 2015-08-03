@@ -5,8 +5,8 @@ PostList = React.createClass({
         {this.props.posts.map(function (p, i) {
           return (
               <div>
-                <p>タイトル:{p.title}</p>
-                <p>本文{p.body}</p>
+                <a href={`/post/${i}`}>タイトル:{p.title}</a>
+                <p>本文:{p.body}</p>
               </div>
           );
         })}
