@@ -1,4 +1,4 @@
-FlowRouter.route("/idea", {
+FlowRouter.route("/", {
   subscriptions: function() {
     this.register('ideas', Meteor.subscribe('ideas'));
   },
