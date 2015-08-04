@@ -1,4 +1,5 @@
 PostList = React.createClass({
+  mixins:[MaterialUI],
   render() {
     return (
       <div>
