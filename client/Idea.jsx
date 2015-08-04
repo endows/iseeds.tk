@@ -3,18 +3,20 @@
 Idea = React.createClass({
   mixins:[MaterialUI],
   getInitialState: function() {
-    return {yes_cnt: 1,no_cnt:1};
+    return {yes_cnt: this.props.idea.yes_cnt,no_cnt:this.props.idea.no_cnt};
   },
   vote_yes() {
     if(localStorage[this.props.idea._id] != 'voted'){
       this.setState({yes_cnt: this.state.yes_cnt + 1});
       localStorage[this.props.idea._id] = 'voted'
+      IdeaCollection.update({_id:this.props.idea._id},{$inc:{yes_cnt:1}})
     }
   },
   vote_no() {
     if(localStorage[this.props.idea._id] != 'voted'){
       this.setState({no_cnt: this.state.no_cnt + 1});
       localStorage[this.props.idea._id] = 'voted'
+      IdeaCollection.update({_id:this.props.idea._id},{$inc:{no_cnt:1}})
     }
   },
   render() {
