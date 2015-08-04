@@ -1,13 +1,13 @@
-FlowRouter.route("/post", {
+FlowRouter.route("/idea", {
   subscriptions: function() {
-    this.register('posts', Meteor.subscribe('posts'));
+    this.register('ideas', Meteor.subscribe('ideas'));
   },
   action: function () {
-    FlowRouter.subsReady("posts", function() {
-      let _posts = PostCollection.find().fetch()
+    FlowRouter.subsReady("ideas", function() {
+      let _ideas = IdeaCollection.find().fetch()
       ReactLayout.render(MainLayout, {
         content:
-        <PostList posts={_posts}/>
+        <IdeaList ideas={_ideas}/>
       });
     });
   }

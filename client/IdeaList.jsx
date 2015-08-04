@@ -1,18 +1,18 @@
-PostList = React.createClass({
+IdeaList = React.createClass({
   mixins:[MaterialUI],
   render() {
     return (
       <div>
-        {this.props.posts.map(function (p, i) {
+        {this.props.ideas.map(function (p, i) {
           return (
               <div>
-                <a href={`/post/${p._id}`}>
+                <a href={`/idea/${p._id}`}>
                   <Card>
-                    <CardMedia overlay={<CardTitle title={p.title} subtitle="Subtitle"/>}>
+                    <CardMedia overlay={<CardTitle title={p.who} subtitle="Subtitle"/>}>
                       <img src="http://lorempixel.com/600/337/nature/"/>
                     </CardMedia>
                     <CardText>
-                      {p.body}
+                      {p.who}
                     </CardText>
                   </Card>
                 </a>
