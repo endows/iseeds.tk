@@ -1,14 +1,18 @@
 MainLayout = React.createClass({
+  mixins:[MaterialUI],
   render() {
     return <div>
       <header>
-        This is our header
+        <AppBar
+          title="ルーティングの勉強④"
+          subtitle='Materia-uiの導入、そして未来へ〜'
+          iconElementRight={<FlatButton label="Save" />} />
       </header>
       <main>
         {this.props.content}
       </main>
       <footer>
-        This is our footer
+        <RaisedButton label="@endows_takashi" primary={true} />
       </footer>
     </div>
   }

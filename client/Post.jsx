@@ -3,9 +3,16 @@ Post = React.createClass({
   render() {
     return (
       <div>
-        <RaisedButton label="Default" />
-        <a href={`/post/${this.props.post._id}`}>タイトル?:{this.props.post.title}</a>
-        <p>本文?:{this.props.post.body}</p>
+        <Card>
+          <CardMedia overlay={<CardTitle title={this.props.post.title} subtitle="Subtitle"/>}>
+            <img src="http://lorempixel.com/600/337/nature/"/>
+          </CardMedia>
+
+          <CardText>
+            {this.props.post.body}
+          </CardText>
+        </Card>
+
       </div>
     )
   }
