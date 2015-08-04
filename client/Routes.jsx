@@ -1,5 +1,3 @@
-
-
 FlowRouter.route("/post", {
   subscriptions: function() {
     this.register('posts', Meteor.subscribe('posts'));
@@ -25,6 +23,22 @@ FlowRouter.route("/post/:_id", {
       ReactLayout.render(MainLayout, {
         content:
         <Post post={_posts}/>
+      });
+    });
+  }
+});
+
+FlowRouter.route("/idea/:_id", {
+  subscriptions: function() {
+    this.register('ideas', Meteor.subscribe('ideas'));
+  },
+  action: function (params) {
+    FlowRouter.subsReady("ideas", function() {
+      let _idea = IdeaCollection.findOne({_id:params._id})
+      console.log(_idea)
+      ReactLayout.render(MainLayout, {
+        content:
+        <Idea idea={_idea}/>
       });
     });
   }
