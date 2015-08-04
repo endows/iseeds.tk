@@ -12,7 +12,8 @@ MainLayout = React.createClass({
         {this.props.content}
       </main>
       <footer>
-        <RaisedButton label="@endows_takashi" primary={true} />
+        <FloatingActionButton>
+        </FloatingActionButton>
       </footer>
     </div>
   }
