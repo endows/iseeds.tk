@@ -32,6 +32,8 @@ Idea = React.createClass({
             <p>このアイディア、どう思う？</p>
             <RaisedButton label="いいね！" secondary={true} onClick={this.vote_yes} class='btn btn-primary' ></RaisedButton>
             <RaisedButton label="わるいね！" primary={true} onClick={this.vote_no} class='btn btn-danger' ></RaisedButton>
+            <RaisedButton label="仲間になる" secondary={true} onClick={this.vote_no} class='btn btn-danger' >
+            </RaisedButton>
             <Pie yes={this.state.yes_cnt} no={this.state.no_cnt} />
           </CardText>
         </Card>
