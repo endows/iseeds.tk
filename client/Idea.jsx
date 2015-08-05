@@ -24,14 +24,9 @@ Idea = React.createClass({
     return (
       <div>
         <Card>
-          <CardMedia overlay={<CardTitle title={this.props.idea.who} subtitle="Subtitle"/>}>
-            <img src="http://lorempixel.com/600/337/nature/"/>
-          </CardMedia>
-
           <CardText>
-            {this.props.idea.who}
-            {this.props.idea.what}
-            {this.props.idea.keyword}
+            <p>{this.props.idea.who}の、{this.props.idea.what}悩みを、{this.props.idea.keyword}で解決する</p>
+
             <RaisedButton label="いいね！" secondary={true} onClick={this.vote_yes} class='btn btn-primary' ></RaisedButton>
             <RaisedButton label="わるいね！" primary={true} onClick={this.vote_no} class='btn btn-danger' ></RaisedButton>
 

@@ -3,16 +3,13 @@ IdeaList = React.createClass({
   render() {
     return (
       <div>
-        {this.props.ideas.map(function (p, i) {
+        {this.props.ideas.map(function (idea, i) {
           return (
               <div>
-                <a href={`/idea/${p._id}`}>
+                <a href={`/idea/${idea._id}`}>
                   <Card>
-                    <CardMedia overlay={<CardTitle title={p.who} subtitle="Subtitle"/>}>
-                      <img src="http://lorempixel.com/600/337/nature/"/>
-                    </CardMedia>
                     <CardText>
-                      {p.who}
+                      <p>{idea.who}の、{idea.what}悩みを、{idea.keyword}で解決する</p>
                     </CardText>
                   </Card>
                 </a>
