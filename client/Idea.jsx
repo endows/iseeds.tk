@@ -26,7 +26,7 @@ Idea = React.createClass({
         <Card>
           <CardText>
             <p>{this.props.idea.who}の、{this.props.idea.what}悩みを、{this.props.idea.keyword}で解決する</p>
-
+            <p>具体的な方法:{this.props.idea.how}</p>
             <RaisedButton label="いいね！" secondary={true} onClick={this.vote_yes} class='btn btn-primary' ></RaisedButton>
             <RaisedButton label="わるいね！" primary={true} onClick={this.vote_no} class='btn btn-danger' ></RaisedButton>
 
