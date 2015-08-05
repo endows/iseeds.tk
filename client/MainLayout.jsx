@@ -3,7 +3,7 @@ MainLayout = React.createClass({
   render() {
     return <div>
       <header>
-        <AppBar iconElementRight={ < FlatButton label = "Save" />} title="iSeed"/>
+        <AppBar title="iSeed"/>
       </header>
       <main>
         {this.props.content}
