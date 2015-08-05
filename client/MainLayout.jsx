@@ -9,7 +9,7 @@ MainLayout = React.createClass({
         {this.props.content}
       </main>
       <footer>
-        <FloatingActionButton></FloatingActionButton>
+      <IdeaForm></IdeaForm>
       </footer>
     </div>
   }
